@@ -1,7 +1,7 @@
 cd '/home/xy/workspace/LP'
-workon Even
+ps aux|grep "runserver"|awk '{print $2}'|xargs kill -9
 echo "y"|python manage.py dropdb
 echo "y"|python manage.py initdb
 echo "y"|python manage.py initdata
-clear
+python /home/xy/workspace/LP/manage.py runserver
 echo 'ok! data in reset !!!!'
